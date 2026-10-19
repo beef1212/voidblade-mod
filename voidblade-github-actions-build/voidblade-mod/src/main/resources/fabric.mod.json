@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "voidblade",
+  "version": "${version}",
+  "name": "Voidblade - 검 모드",
+  "description": "커스텀 검, 강력한 베기와 공허 파동 능력을 추가합니다.",
+  "authors": ["ChatGPT"],
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": { "main": ["com.example.voidblade.VoidbladeMod"] },
+  "depends": { "fabricloader": ">=0.16.0", "minecraft": "~1.21.1", "java": ">=21", "fabric-api": "*" }
+}
