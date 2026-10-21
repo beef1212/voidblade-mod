@@ -4,7 +4,8 @@ name: Build Voidblade Mod
 on:
   workflow_dispatch:
   push:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
   build:
@@ -25,17 +26,18 @@ jobs:
 
       - name: Check project files
         run: |
+          echo "Repository root:"
           pwd
-          ls -la
-          find . -maxdepth 3 -name build.gradle -o -name settings.gradle
+          echo "Gradle files:"
+          find . -maxdepth 6 -type f \( -name build.gradle -o -name settings.gradle \)
 
       - name: Build mod
-        working-directory: voidblade-github-actions-build
+        working-directory: voidblade-github-actions-build/voidblade-mod
         run: gradle build --no-daemon
 
       - name: Upload JAR
         uses: actions/upload-artifact@v4
         with:
           name: voidblade-mod-jar
-          path: voidblade-github-actions-build/build/libs/*.jar
+          path: voidblade-github-actions-build/voidblade-mod/build/libs/*.jar
           if-no-files-found: error
