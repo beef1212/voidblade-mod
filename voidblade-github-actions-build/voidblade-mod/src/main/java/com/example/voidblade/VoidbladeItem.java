@@ -24,9 +24,9 @@ import net.minecraft.world.World;
 public class VoidbladeItem extends Item {
 
     public VoidbladeItem(ToolMaterial material, Settings settings) {
-        super(settings.attributeModifiers(
-            SwordItem.createAttributeModifiers(material, 7.0F, -2.6F)
-        ));
+      super(settings.attributeModifiers(
+    SwordItem.createAttributeModifiers(material, 7, -2.6F)
+));
     }
 
     @Override
